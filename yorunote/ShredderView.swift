@@ -9,11 +9,12 @@ import SwiftUI
 import Combine
 
 struct ShredderView: View {
-    @Environment(\.dismiss) private var dismiss
+    // TabViewで使うため dismiss は削除し、リセット機能を実装する
     @State private var text: String = ""
     @State private var timeRemaining: Int = 60
     @State private var isTimerRunning: Bool = false
     @State private var isShredding: Bool = false
+    @State private var showCompletion: Bool = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -23,7 +24,7 @@ struct ShredderView: View {
                 Color.black.opacity(0.9).ignoresSafeArea()
                 
                 VStack {
-                    if !isShredding {
+                    if !isShredding && !showCompletion {
                         Text("\(timeRemaining)秒")
                             .font(.system(size: 40, weight: .bold, design: .monospaced))
                             .foregroundColor(.white)
@@ -58,13 +59,22 @@ struct ShredderView: View {
                         }
                         .padding()
                         .disabled(text.isEmpty)
-                    } else {
-                        ShreddingAnimationView()
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                    dismiss()
-                                }
+                    } else if isShredding {
+                         ShredderAnimationView()
+                    } else if showCompletion {
+                        VStack(spacing: 20) {
+                            Text("✨")
+                                .font(.system(size: 80))
+                            Text("頭の中が空っぽになりました")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                            
+                            Button("もう一度書く") {
+                                resetShredder()
                             }
+                            .buttonStyle(.bordered)
+                            .tint(.white)
+                        }
                     }
                 }
             }
@@ -72,12 +82,6 @@ struct ShredderView: View {
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("閉じる", action: { dismiss() })
-                        .foregroundColor(.white)
-                }
-            }
             .onReceive(timer) { _ in
                 if isTimerRunning && timeRemaining > 0 {
                     timeRemaining -= 1
@@ -94,10 +98,27 @@ struct ShredderView: View {
         withAnimation(.easeInOut(duration: 1.0)) {
             isShredding = true
         }
+        
+        // アニメーション後に完了画面へ
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation {
+                isShredding = false
+                showCompletion = true
+                text = "" // データ消去
+            }
+        }
+    }
+    
+    private func resetShredder() {
+        withAnimation {
+            showCompletion = false
+            timeRemaining = 60
+            isTimerRunning = false
+        }
     }
 }
 
-struct ShreddingAnimationView: View {
+struct ShredderAnimationView: View {
     var body: some View {
         VStack {
             Text("🗑️")

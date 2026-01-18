@@ -10,8 +10,6 @@
 		058F4E2A2F14C8DD003AA6B4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 058F4E292F14C8D3003AA6B4 /* README.md */; };
 		05CF09D52F1BB56900D4C4E9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 05CF09D42F1BB56900D4C4E9 /* LICENSE */; };
 		05CF0A0F2F1CAB1900D4C4E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */; };
-		05CF0A132F1CAB8500D4C4E9 /* XCUIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */; };
-		05CF0A142F1CAB8500D4C4E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */; };
 		05CF0A152F1CAB8B00D4C4E9 /* XCUIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */; };
 		05CF0A172F1CB08F00D4C4E9 /* yorunoteTest.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0A162F1CB08F00D4C4E9 /* yorunoteTest.xctestplan */; };
 /* End PBXBuildFile section */
@@ -67,8 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05CF0A132F1CAB8500D4C4E9 /* XCUIAutomation.framework in Frameworks */,
-				05CF0A142F1CAB8500D4C4E9 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

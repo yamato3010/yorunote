@@ -15,6 +15,8 @@ struct RitualInputView: View {
     @State private var eventText: String = ""
     @State private var feelingText: String = ""
     @State private var futureText: String = ""
+    @State private var showingErrorAlert = false
+    @State private var errorMessage = ""
     
     // 編集モードの場合に使用
     var existingEntry: NightEntry?
@@ -56,22 +58,35 @@ struct RitualInputView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("保存") {
                         saveEntry()
-                        dismiss()
                     }
                     .disabled(eventText.isEmpty && feelingText.isEmpty && futureText.isEmpty)
                 }
+            }
+            .alert("保存エラー", isPresented: $showingErrorAlert) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
             }
         }
     }
     
     private func saveEntry() {
-        if let existing = existingEntry {
-            existing.eventText = eventText
-            existing.feelingText = feelingText
-            existing.futureText = futureText
-        } else {
-            let newEntry = NightEntry(date: Date(), eventText: eventText, feelingText: feelingText, futureText: futureText)
-            modelContext.insert(newEntry)
+        do {
+            if let existing = existingEntry {
+                existing.eventText = eventText
+                existing.feelingText = feelingText
+                existing.futureText = futureText
+            } else {
+                let newEntry = NightEntry(date: Date(), eventText: eventText, feelingText: feelingText, futureText: futureText)
+                modelContext.insert(newEntry)
+            }
+            
+            try modelContext.save()
+            dismiss()
+        } catch {
+            errorMessage = ErrorMessages.saveFailure
+            showingErrorAlert = true
+            ErrorLogger.log(error, context: "SwiftData保存処理")
         }
     }
 }

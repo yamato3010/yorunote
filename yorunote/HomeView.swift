@@ -15,6 +15,8 @@ struct HomeView: View {
     @State private var showingRitualInput = false
     @State private var selectedDate: Date = Date()
     @State private var selectedEntry: NightEntry?
+    @State private var showingErrorAlert = false
+    @State private var errorMessage = ""
 
     var body: some View {
         NavigationStack {
@@ -82,6 +84,11 @@ struct HomeView: View {
             .sheet(isPresented: $showingRitualInput) {
                 RitualInputView(entry: selectedEntry)
             }
+            .alert("エラー", isPresented: $showingErrorAlert) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
+            }
             .onAppear {
                 findEntry(for: selectedDate)
             }
@@ -89,10 +96,18 @@ struct HomeView: View {
     }
     
     private func findEntry(for date: Date) {
+        // データ検索処理を実行
+        guard !entries.isEmpty else {
+            selectedEntry = nil
+            return
+        }
+        
         let calendar = Calendar.current
         selectedEntry = entries.first { entry in
             calendar.isDate(entry.date, inSameDayAs: date)
         }
+        
+        ErrorLogger.logInfo("日付 \(date) のエントリ検索完了: \(selectedEntry != nil ? "見つかりました" : "見つかりませんでした")")
     }
 }
 

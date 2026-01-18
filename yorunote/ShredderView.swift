@@ -15,6 +15,8 @@ struct ShredderView: View {
     @State private var isTimerRunning: Bool = false
     @State private var isShredding: Bool = false
     @State private var showCompletion: Bool = false
+    @State private var showingErrorAlert = false
+    @State private var errorMessage = ""
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -82,32 +84,53 @@ struct ShredderView: View {
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            .onReceive(timer) { _ in
-                if isTimerRunning && timeRemaining > 0 {
-                    timeRemaining -= 1
-                } else if isTimerRunning && timeRemaining == 0 {
-                    startShredding()
+            .alert("エラー", isPresented: $showingErrorAlert) {
+                Button("リセット") {
+                    resetShredder()
                 }
+                Button("OK") { }
+            } message: {
+                Text(errorMessage)
+            }
+            .onReceive(timer) { _ in
+                handleTimerTick()
             }
         }
 
         // .preferredColorScheme(.dark) is now handled in ContentView
     }
     
+    private func handleTimerTick() {
+        guard isTimerRunning else { return }
+        
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+        } else if timeRemaining == 0 {
+            startShredding()
+        }
+    }
+    
     private func startShredding() {
         isTimerRunning = false
+        
+        // アニメーション処理を安全に実行
         withAnimation(.easeInOut(duration: 1.0)) {
             isShredding = true
         }
         
-        // アニメーション後に完了画面へ
+        // 完了処理をスケジュール
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            withAnimation {
-                isShredding = false
-                showCompletion = true
-                text = "" // データ消去
-            }
+            self.completeShredding()
         }
+    }
+    
+    private func completeShredding() {
+        withAnimation {
+            isShredding = false
+            showCompletion = true
+            text = "" // データ消去
+        }
+        ErrorLogger.logInfo("シュレッダー処理完了")
     }
     
     private func resetShredder() {

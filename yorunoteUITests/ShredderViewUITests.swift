@@ -210,9 +210,6 @@ final class ShredderViewUITests: XCTestCase {
         
         textEditor.tap()
         textEditor.typeText("タブ切り替えテスト")
-        
-        let homeTab = app.tabBars.buttons["ホーム"]
-        homeTab.tap()
          
         let shredderTab = app.tabBars.buttons["シュレッダー"]
         shredderTab.tap()

@@ -1,0 +1,24 @@
+name: test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main, feature/* ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Test
+        run: xcodebuild test -project yorunote.xcodeproj/ -scheme yorunote -resultBundlePath TestResults -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 17" -testPlan yorunoteTest
+        
+      - uses: kishikawakatsumi/xcresulttool@v1
+        with:
+          path: TestResults.xcresult
+        if: success() || failure()

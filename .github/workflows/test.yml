@@ -13,10 +13,10 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Test
-        run: xcodebuild test -project yorunote.xcodeproj/ -scheme yorunote -resultBundlePath TestResults -sdk iphonesimulator -destination "platform=iOS Simulator,name=Any iOS Simulator Device" -testPlan yorunoteTest
+        run: xcodebuild test -project yorunote.xcodeproj/ -scheme yorunote -resultBundlePath TestResults.xcresult -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 16" -testPlan yorunoteTest
         
       - uses: kishikawakatsumi/xcresulttool@v1
         with:

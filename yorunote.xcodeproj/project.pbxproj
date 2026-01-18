@@ -6,8 +6,42 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		058F4E2A2F14C8DD003AA6B4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 058F4E292F14C8D3003AA6B4 /* README.md */; };
+		05CF09D52F1BB56900D4C4E9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 05CF09D42F1BB56900D4C4E9 /* LICENSE */; };
+		05CF0A0F2F1CAB1900D4C4E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */; };
+		05CF0A132F1CAB8500D4C4E9 /* XCUIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */; };
+		05CF0A142F1CAB8500D4C4E9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */; };
+		05CF0A152F1CAB8B00D4C4E9 /* XCUIAutomation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */; };
+		05CF0A172F1CB08F00D4C4E9 /* yorunoteTest.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0A162F1CB08F00D4C4E9 /* yorunoteTest.xctestplan */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05CF09DE2F1CAA8100D4C4E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A96F632F0E97F20071E233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05A96F6A2F0E97F20071E233;
+			remoteInfo = yorunote;
+		};
+		05CF0A2E2F1CBE5000D4C4E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05A96F632F0E97F20071E233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05A96F6A2F0E97F20071E233;
+			remoteInfo = yorunote;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		058F4E292F14C8D3003AA6B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		05A96F6B2F0E97F20071E233 /* yorunote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yorunote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05CF09D42F1BB56900D4C4E9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		05CF09DA2F1CAA8100D4C4E9 /* yorunoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yorunoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCUIAutomation.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCUIAutomation.framework; sourceTree = DEVELOPER_DIR; };
+		05CF0A162F1CB08F00D4C4E9 /* yorunoteTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = yorunoteTest.xctestplan; sourceTree = "<group>"; };
+		05CF0A282F1CBE5000D4C4E9 /* yorunoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yorunoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +50,38 @@
 			path = yorunote;
 			sourceTree = "<group>";
 		};
+		05CF09DB2F1CAA8100D4C4E9 /* yorunoteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yorunoteTests;
+			sourceTree = "<group>";
+		};
+		05CF0A292F1CBE5000D4C4E9 /* yorunoteUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = yorunoteUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		05A96F682F0E97F20071E233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CF0A132F1CAB8500D4C4E9 /* XCUIAutomation.framework in Frameworks */,
+				05CF0A142F1CAB8500D4C4E9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF09D72F1CAA8100D4C4E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CF0A152F1CAB8B00D4C4E9 /* XCUIAutomation.framework in Frameworks */,
+				05CF0A0F2F1CAB1900D4C4E9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF0A252F1CBE5000D4C4E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,7 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				05A96F6D2F0E97F20071E233 /* yorunote */,
+				05CF09DB2F1CAA8100D4C4E9 /* yorunoteTests */,
+				05CF0A292F1CBE5000D4C4E9 /* yorunoteUITests */,
 				05A96F6C2F0E97F20071E233 /* Products */,
+				058F4E292F14C8D3003AA6B4 /* README.md */,
+				05CF09D42F1BB56900D4C4E9 /* LICENSE */,
+				05CF0A0D2F1CAB1900D4C4E9 /* Frameworks */,
+				05CF0A162F1CB08F00D4C4E9 /* yorunoteTest.xctestplan */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,8 +109,19 @@
 			isa = PBXGroup;
 			children = (
 				05A96F6B2F0E97F20071E233 /* yorunote.app */,
+				05CF09DA2F1CAA8100D4C4E9 /* yorunoteTests.xctest */,
+				05CF0A282F1CBE5000D4C4E9 /* yorunoteUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		05CF0A0D2F1CAB1900D4C4E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05CF0A112F1CAB3700D4C4E9 /* XCUIAutomation.framework */,
+				05CF0A0E2F1CAB1900D4C4E9 /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +149,52 @@
 			productReference = 05A96F6B2F0E97F20071E233 /* yorunote.app */;
 			productType = "com.apple.product-type.application";
 		};
+		05CF09D92F1CAA8100D4C4E9 /* yorunoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05CF09E02F1CAA8100D4C4E9 /* Build configuration list for PBXNativeTarget "yorunoteTests" */;
+			buildPhases = (
+				05CF09D62F1CAA8100D4C4E9 /* Sources */,
+				05CF09D72F1CAA8100D4C4E9 /* Frameworks */,
+				05CF09D82F1CAA8100D4C4E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05CF09DF2F1CAA8100D4C4E9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				05CF09DB2F1CAA8100D4C4E9 /* yorunoteTests */,
+			);
+			name = yorunoteTests;
+			packageProductDependencies = (
+			);
+			productName = yorunoteTests;
+			productReference = 05CF09DA2F1CAA8100D4C4E9 /* yorunoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		05CF0A272F1CBE5000D4C4E9 /* yorunoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05CF0A302F1CBE5000D4C4E9 /* Build configuration list for PBXNativeTarget "yorunoteUITests" */;
+			buildPhases = (
+				05CF0A242F1CBE5000D4C4E9 /* Sources */,
+				05CF0A252F1CBE5000D4C4E9 /* Frameworks */,
+				05CF0A262F1CBE5000D4C4E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05CF0A2F2F1CBE5000D4C4E9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				05CF0A292F1CBE5000D4C4E9 /* yorunoteUITests */,
+			);
+			name = yorunoteUITests;
+			packageProductDependencies = (
+			);
+			productName = yorunoteUITests;
+			productReference = 05CF0A282F1CBE5000D4C4E9 /* yorunoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +207,14 @@
 				TargetAttributes = {
 					05A96F6A2F0E97F20071E233 = {
 						CreatedOnToolsVersion = 26.2;
+					};
+					05CF09D92F1CAA8100D4C4E9 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 05A96F6A2F0E97F20071E233;
+					};
+					05CF0A272F1CBE5000D4C4E9 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 05A96F6A2F0E97F20071E233;
 					};
 				};
 			};
@@ -100,12 +233,30 @@
 			projectRoot = "";
 			targets = (
 				05A96F6A2F0E97F20071E233 /* yorunote */,
+				05CF09D92F1CAA8100D4C4E9 /* yorunoteTests */,
+				05CF0A272F1CBE5000D4C4E9 /* yorunoteUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		05A96F692F0E97F20071E233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CF09D52F1BB56900D4C4E9 /* LICENSE in Resources */,
+				05CF0A172F1CB08F00D4C4E9 /* yorunoteTest.xctestplan in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF09D82F1CAA8100D4C4E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF0A262F1CBE5000D4C4E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,10 +270,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058F4E2A2F14C8DD003AA6B4 /* README.md in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF09D62F1CAA8100D4C4E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05CF0A242F1CBE5000D4C4E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05CF09DF2F1CAA8100D4C4E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05A96F6A2F0E97F20071E233 /* yorunote */;
+			targetProxy = 05CF09DE2F1CAA8100D4C4E9 /* PBXContainerItemProxy */;
+		};
+		05CF0A2F2F1CBE5000D4C4E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05A96F6A2F0E97F20071E233 /* yorunote */;
+			targetProxy = 05CF0A2E2F1CBE5000D4C4E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		05A96F762F0E97F40071E233 /* Debug */ = {
@@ -323,6 +502,104 @@
 			};
 			name = Release;
 		};
+		05CF09E12F1CAA8100D4C4E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yamato3010.yorunoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yorunote.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yorunote";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		05CF09E22F1CAA8100D4C4E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yamato3010.yorunoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/yorunote.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/yorunote";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		05CF0A312F1CBE5000D4C4E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yamato3010.yorunoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = yorunote;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		05CF0A322F1CBE5000D4C4E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = yamato3010.yorunoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = yorunote;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +617,24 @@
 			buildConfigurations = (
 				05A96F792F0E97F40071E233 /* Debug */,
 				05A96F7A2F0E97F40071E233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CF09E02F1CAA8100D4C4E9 /* Build configuration list for PBXNativeTarget "yorunoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CF09E12F1CAA8100D4C4E9 /* Debug */,
+				05CF09E22F1CAA8100D4C4E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CF0A302F1CBE5000D4C4E9 /* Build configuration list for PBXNativeTarget "yorunoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CF0A312F1CBE5000D4C4E9 /* Debug */,
+				05CF0A322F1CBE5000D4C4E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -90,7 +90,8 @@ struct ShredderView: View {
                 }
             }
         }
-        .preferredColorScheme(.dark)
+
+        // .preferredColorScheme(.dark) is now handled in ContentView
     }
     
     private func startShredding() {

@@ -1,0 +1,72 @@
+{
+  "configurations" : [
+    {
+      "id" : "F5E028BE-7083-4D57-AF9B-30363A59CF17",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:yorunote.xcodeproj",
+          "identifier" : "05A96F6A2F0E97F20071E233",
+          "name" : "yorunote"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:yorunote.xcodeproj",
+        "identifier" : "05CF0A272F1CBE5000D4C4E9",
+        "name" : "yorunoteUITests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "ContentViewUITests",
+        "HomeViewUITests",
+        "HomeViewUITests\/testAccessibilityElements()",
+        "HomeViewUITests\/testCalendarInteraction()",
+        "HomeViewUITests\/testContentConfirmationButtonTap()",
+        "HomeViewUITests\/testDateSelection()",
+        "HomeViewUITests\/testExistingEntryDisplay()",
+        "HomeViewUITests\/testHomeViewInitialDisplay()",
+        "HomeViewUITests\/testHomeViewPerformance()",
+        "HomeViewUITests\/testLayoutElements()",
+        "HomeViewUITests\/testNavigationElements()",
+        "HomeViewUITests\/testNoEntryState()",
+        "HomeViewUITests\/testRitualStartButtonTap()",
+        "HomeViewUITests\/testTodayRitualButton()",
+        "HomeViewUITests\/testViewStability()",
+        "HomeViewUITests\/testViewStateConsistency()",
+        "ShredderViewUITests",
+        "ShredderViewUITests\/testLongTextInput()",
+        "ShredderViewUITests\/testManualShredderExecution()",
+        "ShredderViewUITests\/testRapidInteractions()",
+        "ShredderViewUITests\/testResetFunctionality()",
+        "ShredderViewUITests\/testShredderAnimation()",
+        "ShredderViewUITests\/testShredderButtonState()",
+        "ShredderViewUITests\/testShredderViewAccessibility()",
+        "ShredderViewUITests\/testShredderViewInitialState()",
+        "ShredderViewUITests\/testShredderViewPerformance()",
+        "ShredderViewUITests\/testSpecialCharactersInput()",
+        "ShredderViewUITests\/testTextInput()",
+        "ShredderViewUITests\/testTimerStartsOnInput()",
+        "ShredderViewUITests\/testViewStateAfterTabSwitch()"
+      ],
+      "target" : {
+        "containerPath" : "container:yorunote.xcodeproj",
+        "identifier" : "05CF09D92F1CAA8100D4C4E9",
+        "name" : "yorunoteTests"
+      }
+    }
+  ],
+  "version" : 1
+}

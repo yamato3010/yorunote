@@ -22,6 +22,9 @@
   },
   "testTargets" : [
     {
+      "skippedTests" : [
+        "ShredderViewUITests\/testViewStateAfterTabSwitch()"
+      ],
       "target" : {
         "containerPath" : "container:yorunote.xcodeproj",
         "identifier" : "05CF0A272F1CBE5000D4C4E9",

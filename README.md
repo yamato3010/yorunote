@@ -39,6 +39,11 @@
 * **Date Management:** Calendar API
 * **Animations:** SwiftUI Animation & Transitions
 
+## 🙏 参考
+
+- テスト用CI
+  - https://github.com/ykws/XCTestExample/blob/main/.github/workflows/test.yml
+
 ## ⚖️ ライセンス
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

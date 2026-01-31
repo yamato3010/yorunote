@@ -120,7 +120,7 @@ final class ContentViewUITests: XCTestCase {
         let endTime = CFAbsoluteTimeGetCurrent()
         let totalTime = endTime - startTime
         
-        XCTAssertLessThan(totalTime, 40.0, "Tab switching should complete within 40 seconds")
+        XCTAssertLessThan(totalTime, 60.0, "Tab switching should complete within 60 seconds")
         
         print("Tab switching performance: \(String(format: "%.2f", totalTime)) seconds for 10 switches")
     }

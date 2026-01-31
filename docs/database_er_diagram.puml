@@ -1,0 +1,26 @@
+@startuml ヨルノートアプリ ER図
+
+!define ENTITY class
+!define PRIMARY_KEY <u>
+!define FOREIGN_KEY <i>
+
+title ヨルノートアプリ データベース構造 (SwiftData/SQLite)
+
+ENTITY NightEntry {
+  PRIMARY_KEY id : UUID
+  --
+  date : Date
+  eventText : String
+  feelingText : String
+  futureText : String
+}
+
+note right of NightEntry
+  **SwiftData Model**
+  - ローカルSQLiteデータベースに保存
+  - @Model アノテーションで定義
+  - 自動的にUUIDでプライマリキー生成
+  - 日付ベースでクエリ実行
+end note
+
+@enduml
